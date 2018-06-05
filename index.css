@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Tangerine');
 
 body{
     font-family: 'Open Sans', sans-serif;
+}
+
+h1{
+    font-family: 'Tangerine', cursive;
+    color: slateblue
 }
