@@ -15,21 +15,21 @@ img#skull {
   right: 5vw;
   top: 5vw;
   transform: rotate(15deg);
-  width: 25vw;
+  width: 20vw;
 }
 
 img#quill {
   position: absolute;
   top: calc(30vw + 40px);
   right: 3vw;
-  width: 20vw;
+  width: 10vw;
 }
 
 h1 {
   font-family: UnifrakturCook, serif;
   margin-left: 10vw;
-  margin-top: 5vw;
-  margin-bottom: 3vw;
+  margin-top: 2vw;
+  margin-bottom: 0vw;
   color: rgba(255,255,255,0.4);
   font-size: 8vw;
 }
