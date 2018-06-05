@@ -41,7 +41,6 @@ function changeheadings() {
 
 function update() {
     const newtext = document.getElementById("input1").value
-    alert("change heading 1 to: " + newtext)
     heading1.textContent = newtext
 }
 
