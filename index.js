@@ -16,7 +16,6 @@ const buildeffect = function(f) {
   return document.createTextNode(spellEffect)
 }
 
-
 const addElements = function(ev) {
   ev.preventDefault()
   const f = ev.target
@@ -29,7 +28,7 @@ const addElements = function(ev) {
   var linode2 = buildli()
   var textnode2 = buildeffect(f)
   linode2.appendChild(textnode2)
-  effect.appendChild(textnode2)
+  effect.appendChild(linode2)
 
   f.reset()
 }
