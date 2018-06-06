@@ -156,3 +156,21 @@ input.small {
 .level {
   color: red;
 }
+
+
+button[title='remove'] {
+  color: greenyellow;
+  background-color: transparent;
+  margin-bottom: 1vw;
+  margin-left: 5vw;
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+button[title='remove']:hover {
+  background-color: transparent;
+  margin-bottom: 1vw;
+  margin-left: 5vw;
+  color: darkred;
+}
