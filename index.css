@@ -126,14 +126,16 @@ main {
 ul#spells {
  list-style: none;
  margin-bottom: 0vw;
- font-size: 2rem;
- color: red;
 }
 
-ul#effect {
-  list-style: none;
-  margin-bottom: 0vw;
-  margin-left: 15vw;
+span.spell {
+  margin-right: 1vw;
+  font-size: 2rem;
+  color: red;
+ }
+
+span.effect {
+  margin-left: 2vw;
   font-size: 1rem;
   color: blue;
  }

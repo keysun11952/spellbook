@@ -1,34 +1,36 @@
 const form = document.querySelector('form')
 
-const buildli = function() {
-  return document.createElement("LI")
-}
-
 const buildspells = function(f) {
+  var spell = document.createElement("span")
+  spell.setAttribute("class", "spell")
   const spellName = f.spellName.value
-  const spells = document.querySelector('#spells')
-  return document.createTextNode(spellName)
+  var textnode = document.createTextNode(spellName)
+  spell.appendChild(textnode)
+  return spell
 }
 
 const buildeffect = function(f) {
+  var effect = document.createElement("span")
+  effect.setAttribute("class", "effect")
   const spellEffect = f.spellEffect.value
-  const effect = document.querySelector('#effect')
-  return document.createTextNode(spellEffect)
+  var textnode = document.createTextNode(spellEffect)
+  effect.appendChild(textnode)
+  return effect
 }
 
 const addElements = function(ev) {
   ev.preventDefault()
+
   const f = ev.target
+  const spells = document.querySelector('#spells')
 
-  var linode1 = buildli()
-  var textnode1 = buildspells(f)
-  linode1.appendChild(textnode1)
-  spells.appendChild(linode1)
+  var linode = document.createElement("li")
+  var spell = buildspells(f)
+  var effect = buildeffect(f)
 
-  var linode2 = buildli()
-  var textnode2 = buildeffect(f)
-  linode2.appendChild(textnode2)
-  effect.appendChild(linode2)
+  linode.appendChild(spell)
+  linode.appendChild(effect)
+  spells.appendChild(linode)
 
   f.reset()
 }
