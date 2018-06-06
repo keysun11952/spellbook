@@ -1,38 +1,55 @@
-const form = document.querySelector('form')
+const app = {
+  init: function() {
+    const form = document.querySelector('form')
+    form.addEventListener('submit', (ev) => {
+      ev.preventDefault()
+      this.handleSubmit(ev)
+    })
+  },
 
-const buildspells = function(f) {
-  var spell = document.createElement("span")
-  spell.setAttribute("class", "spell")
-  const spellName = f.spellName.value
-  var textnode = document.createTextNode(spellName)
-  spell.appendChild(textnode)
-  return spell
+  renderProperty: function(name, value) {
+    const el = document.createElement('span')
+    el.classList.add(name)
+    el.textContent = value
+    el.setAttribute('title', value)
+    return el
+  },
+
+  renderItem: function(spell) {
+    // ['name', 'level']
+    const properties = Object.keys(spell)
+
+    // collect an array of <span> elements
+    const childElements = properties.map((prop) => {
+      return this.renderProperty(prop, spell[prop])
+    })
+
+    const item = document.createElement('li')
+    item.classList.add('spell')
+
+    // append each <span> to the <li>
+    childElements.forEach(function(el) {
+      item.appendChild(el)
+    })
+
+    return item
+  },
+
+  handleSubmit: function(ev) {
+    const f = ev.target
+
+    const spell = {
+      name: f.spellName.value,
+      level: f.level.value,
+    }
+
+    const item = this.renderItem(spell)
+
+    const list = document.querySelector('#spells')
+    list.appendChild(item)
+
+    f.reset()
+  },
 }
 
-const buildeffect = function(f) {
-  var effect = document.createElement("span")
-  effect.setAttribute("class", "effect")
-  const spellEffect = f.spellEffect.value
-  var textnode = document.createTextNode(spellEffect)
-  effect.appendChild(textnode)
-  return effect
-}
-
-const addElements = function(ev) {
-  ev.preventDefault()
-
-  const f = ev.target
-  const spells = document.querySelector('#spells')
-
-  var linode = document.createElement("li")
-  var spell = buildspells(f)
-  var effect = buildeffect(f)
-
-  linode.appendChild(spell)
-  linode.appendChild(effect)
-  spells.appendChild(linode)
-
-  f.reset()
-}
-
-form.addEventListener('submit', addElements)
+app.init()
