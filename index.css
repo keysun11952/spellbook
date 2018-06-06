@@ -125,8 +125,18 @@ main {
 
 ul#spells {
  list-style: none;
- padding: 0;
+ margin-bottom: 0vw;
+ font-size: 2rem;
+ color: red;
 }
+
+ul#effect {
+  list-style: none;
+  margin-bottom: 0vw;
+  margin-left: 10vw;
+  font-size: 1rem;
+  color: blue;
+ }
 
 .details {
   font-size: 0.7em;
