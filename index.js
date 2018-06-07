@@ -68,15 +68,3 @@ const app = {
 }
 
 app.init()
-
-// button.addEventListener('click', function(ev) {
-//   ev.preventDefault()
-//   const f = ev.target
-//   console.log('haha')
-
-
-//   // const index = f.id
-//   // console.log(index)
-//   // const toRemove = document.querySelector('li#1')
-//   // toRemove.remove
-// })
