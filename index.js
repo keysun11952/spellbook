@@ -1,8 +1,7 @@
 const app = {
   spells: [],
-  count: 0,
 
-  init: function() {
+  init: function () {
     const form = document.querySelector('form')
     form.addEventListener('submit', (ev) => {
       ev.preventDefault()
@@ -10,7 +9,7 @@ const app = {
     })
   },
 
-  renderProperty: function(name, value) {
+  renderProperty: function (name, value) {
     const el = document.createElement('span')
     el.classList.add(name)
     el.textContent = value
@@ -18,7 +17,7 @@ const app = {
     return el
   },
 
-  renderItem: function(spell) {
+  renderItem: function (spell) {
     // ['name', 'level']
     const properties = Object.keys(spell)
 
@@ -31,21 +30,25 @@ const app = {
     item.classList.add('spell')
 
     const button = document.createElement('button')
-    button.class = 'button'
+    button.classList.add('remove')
     button.textContent = 'remove'
-    button.type = 'submit'
     button.title = 'remove'
 
     // append each <span> to the <li>
-    childElements.forEach(function(el) {
+    childElements.forEach(function (el) {
       item.appendChild(el)
       item.appendChild(button)
     })
 
+    button.onclick = function () {
+      const toRemove = button.parentElement
+      toRemove.parentElement.removeChild(toRemove)
+    }
+
     return item
   },
 
-  handleSubmit: function(ev) {
+  handleSubmit: function (ev) {
     const f = ev.target
 
     const spell = {
@@ -54,8 +57,6 @@ const app = {
     }
 
     this.spells.push(spell)
-    console.log(this.spells[this.count])
-    this.count++
 
     const item = this.renderItem(spell)
 
@@ -67,3 +68,15 @@ const app = {
 }
 
 app.init()
+
+// button.addEventListener('click', function(ev) {
+//   ev.preventDefault()
+//   const f = ev.target
+//   console.log('haha')
+
+
+//   // const index = f.id
+//   // console.log(index)
+//   // const toRemove = document.querySelector('li#1')
+//   // toRemove.remove
+// })
