@@ -40,9 +40,11 @@ const app = {
       item.appendChild(button)
     })
 
-    button.onclick = function () {
+    button.onclick = () => {
       const toRemove = button.parentElement
       toRemove.parentElement.removeChild(toRemove)
+      const i = this.spells.indexOf(spell)
+      this.spells.splice(i, 1)
     }
 
     return item
