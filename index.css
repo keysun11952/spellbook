@@ -157,20 +157,21 @@ input.small {
   color: red;
 }
 
-
-button[title='remove'] {
-  color: greenyellow;
-  background-color: transparent;
-  margin-bottom: 1vw;
-  margin-left: 5vw;
-  font-family: "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: bold;
-  font-size: 1rem;
+button.delete {
+  background-color: #ff3333;
+  color: white;
 }
 
-button[title='remove']:hover {
-  background-color: transparent;
-  margin-bottom: 1vw;
-  margin-left: 5vw;
-  color: darkred;
+button.fav {
+  background-color: #F8BE3D;
+  color: black;
+}
+
+.template {
+  display: none;
+}
+
+span.fav {
+  color: blue;
+  font-weight: bold;
 }
