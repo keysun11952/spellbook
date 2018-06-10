@@ -167,11 +167,15 @@ button.fav {
   color: black;
 }
 
+button.move {
+  background-color: #3366FF;
+  color: white;
+}
+
 .template {
   display: none;
 }
 
-span.fav {
-  color: blue;
-  font-weight: bold;
+.spell.fav {
+  background-color: goldenrod;
 }
