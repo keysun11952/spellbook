@@ -61,6 +61,13 @@ class App {
       item.classList.add('fav')
     }
 
+    item
+    .querySelector('button.save')
+    .addEventListener(
+      'click',
+      this.saveChange.bind(this,spell)
+    )
+
     // delete button
     item
       .querySelector('button.delete')
@@ -144,6 +151,16 @@ class App {
     const button = ev.target
     const item = button.closest('.spell')
     spell.favorite = item.classList.toggle('fav')
+    this.save()
+  }
+
+  saveChange(spell, ev) {
+    const button = ev.target
+    const item = button.closest('.spell')
+    const i = this.spells.indexOf(spell)
+    const toChange = item.firstElementChild
+    this.spells[i].name = toChange.innerHTML
+    toChange.setAttribute('title', toChange.innerHTML)
     this.save()
   }
 

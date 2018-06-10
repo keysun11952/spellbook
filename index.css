@@ -157,6 +157,11 @@ input.small {
   color: red;
 }
 
+button.save {
+  background-color: #009900;
+  color: white;
+}
+
 button.delete {
   background-color: #ff3333;
   color: white;
